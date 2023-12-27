@@ -22,7 +22,7 @@ jobs:
     steps:
     - name: Checkout code
       # Faz check-out do seu repositório em $GITHUB_WORKSPACE, para que seu job possa acessá-lo
-      uses: actions/checkout@v3
+      uses: actions/checkout@v2
 
       # Executa um único comando usando o shell dos runners
     - name: Executando um comando simples
