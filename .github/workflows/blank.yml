@@ -1,36 +1,34 @@
-# This is a basic workflow to help you get started with Actions
+# Definindo o nome do Workflow
 
-name: CI
+name: Teste Workflow
 
-# Controls when the workflow will run
+# Definindo quando o Workflow será disparado
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
+  # Aciona o fluxo de trabalho em eventos de solicitação push ou pull, mas apenas para o branch "main"
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    branches: [ "main" , "developer"]
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+  # Permite que você execute este fluxo de trabalho manualmente na guia Ações
+  # workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+# Definindo os jobs que o workflow executará
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
+  test_job:
+    name: Executando job de teste
+    # O tipo de runner em que o job será executado
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
+    # Os Steps representam uma sequência de tarefas que serão executadas como parte do job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Checkout code
+      # Faz check-out do seu repositório em $GITHUB_WORKSPACE, para que seu job possa acessá-lo
       - uses: actions/checkout@v3
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+      # Executa um único comando usando o shell dos runners
+      - name: Executando um comando simples
+        run: echo Olá, mundo! Este é o nosso primeiro job no GitHub Actions
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+      - name: Step 3
+        run: echo Olá, mundo! Este é a Step 3
+
+   
