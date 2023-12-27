@@ -20,15 +20,15 @@ jobs:
 
     # Os Steps representam uma sequência de tarefas que serão executadas como parte do job
     steps:
-      - name: Checkout code
+    - name: Checkout code
       # Faz check-out do seu repositório em $GITHUB_WORKSPACE, para que seu job possa acessá-lo
-      - uses: actions/checkout@v3
+      uses: actions/checkout@v3
 
       # Executa um único comando usando o shell dos runners
-      - name: Executando um comando simples
-        run: echo Olá, mundo! Este é o nosso primeiro job no GitHub Actions
+    - name: Executando um comando simples
+      run: echo Olá, mundo! Este é o nosso primeiro job no GitHub Actions
 
-      - name: Step 3
-        run: echo Olá, mundo! Este é a Step 3
+    - name: Step 3
+      run: echo Olá, mundo! Este é a Step 3
 
    
