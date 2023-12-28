@@ -30,7 +30,7 @@ jobs:
         # Username used to log against the Docker registry
         username: 'rockie88'
         # Password or personal access token used to log against the Docker registry
-        password: ${{secrets.DOCKER_HUB_PSW}}      
+        password: ${{ secrets.DOCKER_HUB_PSW }}      
 
 
    
