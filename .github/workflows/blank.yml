@@ -16,7 +16,7 @@ jobs:
   test_job:
     name: Executando job de teste
     # O tipo de runner em que o job será executado
-    runs-on: self-hosted
+    runs-on: ubuntu-hosted
 
     # Os Steps representam uma sequência de tarefas que serão executadas como parte do job
     steps:
@@ -24,11 +24,13 @@ jobs:
       # Faz check-out do seu repositório em $GITHUB_WORKSPACE, para que seu job possa acessá-lo
       uses: actions/checkout@v3
 
-      # Executa um único comando usando o shell dos runners
-    - name: Executando um comando simples
-      run: echo Olá, mundo! Este é o nosso primeiro job no GitHub Actions
+    - name: Docker Login       
+      uses: docker/login-action@v3.0.0
+      with:
+        # Username used to log against the Docker registry
+        username: 'rockie88'
+        # Password or personal access token used to log against the Docker registry
+        password: ${{secrets.DOCKER_HUB_PSW}}      
 
-    - name: Step 3
-      run: echo Olá, mundo! Este é a Step 3
 
    
