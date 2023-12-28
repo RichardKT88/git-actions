@@ -16,7 +16,7 @@ jobs:
   test_job:
     name: Executando job de teste
     # O tipo de runner em que o job será executado
-    runs-on: ubuntu-hosted
+    runs-on: ubuntu-latest
 
     # Os Steps representam uma sequência de tarefas que serão executadas como parte do job
     steps:
